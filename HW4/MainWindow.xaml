@@ -1,0 +1,282 @@
+﻿<Window
+    x:Class="HW4.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:HW4"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Тренажер для вивчення таблиці множення"
+    Width="900"
+    Height="500"
+    MinWidth="900"
+    MinHeight="500"
+    MaxWidth="1200"
+    MaxHeight="720"
+    mc:Ignorable="d">
+
+    <TabControl>
+        <TabItem
+            x:Name="TrainigTabItem"
+            Width="90"
+            Header="Тренування">
+            <Grid Background="AliceBlue">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="96*" />
+                    <ColumnDefinition Width="160*" />
+                    <ColumnDefinition Width="64*" />
+                    <ColumnDefinition Width="255*" />
+                    <ColumnDefinition Width="64*" />
+                    <ColumnDefinition Width="255*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.5*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="3"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Content="ТРЕНУВАННЯ"
+                    FontSize="40" />
+
+                <TextBlock
+                    x:Name="TrainTextBlockNumOne"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Margin="32,0,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    FontSize="35" />
+
+                <TextBlock
+                    x:Name="TrainTextBlockMult"
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontSize="35"
+                    Text="X" />
+
+                <TextBlock
+                    x:Name="TrainTextBlockNumTwo"
+                    Grid.Row="1"
+                    Grid.Column="3"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontSize="35" />
+
+                <TextBlock
+                    x:Name="TrainTextBlockEquals"
+                    Grid.Row="1"
+                    Grid.Column="4"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontSize="35"
+                    Text="=" />
+
+                <TextBox
+                    x:Name="TrainTextBloxRes"
+                    Grid.Row="1"
+                    Grid.Column="5"
+                    Width="200"
+                    Height="80"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontSize="35" />
+
+                <Button
+                    x:Name="TrainCheckResultButton"
+                    Grid.Row="2"
+                    Grid.Column="5"
+                    Width="200"
+                    Height="80"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Click="TrainCheckResultButton_Click"
+                    Content="Перевірити відповідь"
+                    FontSize="20" />
+
+            </Grid>
+        </TabItem>
+
+        <TabItem
+            x:Name="ExamTabItem"
+            Width="110"
+            Header="Пройти Екзамен">
+            <Grid Background="AliceBlue">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="96*" />
+                        <ColumnDefinition Width="160*" />
+                        <ColumnDefinition Width="64*" />
+                        <ColumnDefinition Width="255*" />
+                        <ColumnDefinition Width="64*" />
+                        <ColumnDefinition Width="255*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.5*" />
+                        <RowDefinition Height="0.5*" />
+                        <RowDefinition Height="1*" />
+                    </Grid.RowDefinitions>
+
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="3"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Content="ЕКЗАМЕН"
+                        FontSize="40" />
+
+                    <TextBlock
+                        x:Name="ExamTextBlockQuestion"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="3"
+                        Margin="32,0,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        FontSize="35" />
+
+                    <TextBlock
+                        x:Name="ExamTextBlockNumOne"
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        Margin="32,0,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        FontSize="35" />
+
+                    <TextBlock
+                        x:Name="ExamTextBlockMult"
+                        Grid.Row="2"
+                        Grid.Column="2"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="35"
+                        Text="X" />
+
+                    <TextBlock
+                        x:Name="ExamTextBlockNumTwo"
+                        Grid.Row="2"
+                        Grid.Column="3"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="35" />
+
+                    <TextBlock
+                        x:Name="ExamTextBlockEquals"
+                        Grid.Row="2"
+                        Grid.Column="4"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="35"
+                        Text="=" />
+
+                    <ComboBox
+                        x:Name="ExamComboBoxRes"
+                        Grid.Row="2"
+                        Grid.Column="5"
+                        Width="180"
+                        Height="70"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="35">
+                        <ComboBoxItem x:Name="ExamAnswerOne" Content="" />
+                        <ComboBoxItem x:Name="ExamAnswerTwo" Content="" />
+                        <ComboBoxItem x:Name="ExamAnswerThree" Content="" />
+                    </ComboBox>
+                </Grid>
+
+                <StackPanel Grid.Column="1" Orientation="Vertical">
+
+                    <Label
+                        Width="215"
+                        Height="34"
+                        Margin="5,20,5,10"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Content="Оберіть кількість питань:"
+                        FontSize="18" />
+
+                    <ComboBox
+                        x:Name="ExamQuestionQuantity"
+                        Width="200"
+                        Height="38"
+                        Margin="5,10,5,20"
+                        HorizontalAlignment="Center"
+                        SelectedIndex="0">
+                        <ComboBoxItem Content="25" />
+                        <ComboBoxItem Content="50" />
+                        <ComboBoxItem Content="75" />
+                        <ComboBoxItem Content="100" />
+                    </ComboBox>
+
+                    <Button
+                        x:Name="ExamHint"
+                        Width="200"
+                        Height="38"
+                        Margin="5,20,5,20"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Click="ExamHint_Click"
+                        Content="Підказка"
+                        FontSize="20" />
+
+                    <Button
+                        x:Name="ExamCheckResultButton"
+                        Width="200"
+                        Height="38"
+                        Margin="5,20,5,20"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Click="ExamCheckResultButton_Click"
+                        Content="Перевірити відповідь"
+                        FontSize="20" />
+
+                    <Button
+                        x:Name="ExamStart"
+                        Width="200"
+                        Height="38"
+                        Margin="5,20,5,20"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Click="ExamStart_Click"
+                        Content="Розпочати Екзамен"
+                        FontSize="20" />
+
+                    <Button
+                        x:Name="ExamExit"
+                        Width="200"
+                        Height="38"
+                        Margin="5,20,5,20"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Click="ExamExit_Click"
+                        Content="Вийти"
+                        FontSize="20" />
+                </StackPanel>
+            </Grid>
+        </TabItem>
+
+        <TabItem
+            x:Name="TableTabItem"
+            Width="70"
+            Header="Таблиця">
+            <Grid Background="AntiqueWhite">
+                <Image
+                    Margin="10"
+                    Source="/Image/MultTable.jpg"
+                    Stretch="Fill" />
+            </Grid>
+        </TabItem>
+    </TabControl>
+</Window>
